@@ -10,9 +10,11 @@ import java.time.LocalTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UsuarioDTO {
-
     private String id;
     private String nome;
     private LocalTime cargaHoraria;
     private String cargo;
+    private String email;
+    private String senha;
+    private String permissao;
 }
