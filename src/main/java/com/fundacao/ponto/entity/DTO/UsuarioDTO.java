@@ -17,4 +17,9 @@ public class UsuarioDTO {
     private String email;
     private String senha;
     private String permissao;
+
+    public UsuarioDTO(String email, String senha) {
+        this.email = email;
+        this.senha = senha;
+    }
 }

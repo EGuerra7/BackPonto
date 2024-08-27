@@ -33,6 +33,4 @@ public class Usuario {
     @Column(name = "permissao")
     private String permissao;
 
-
-
 }

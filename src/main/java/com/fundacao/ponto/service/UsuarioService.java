@@ -10,4 +10,5 @@ public interface UsuarioService {
     UsuarioDTO cadastrar(UsuarioDTO usuarioDTO);
     List<UsuarioDTO> listar();
     boolean deletar(String id);
+    UsuarioDTO login(String email, String senha);
 }

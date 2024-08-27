@@ -1,7 +1,6 @@
 package com.fundacao.ponto.controller;
 
 import com.fundacao.ponto.entity.DTO.UsuarioDTO;
-import com.fundacao.ponto.service.PontoService;
 import com.fundacao.ponto.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -29,4 +28,10 @@ public class UsuarioController {
     public boolean deletar(@PathVariable("id") String id){
         return usuarioService.deletar(id);
     }
+
+    @PostMapping("/login")
+    public UsuarioDTO login(@RequestBody UsuarioDTO usuario){
+        return usuarioService.login(usuario.getEmail(), usuario.getSenha());
+    }
+
 }

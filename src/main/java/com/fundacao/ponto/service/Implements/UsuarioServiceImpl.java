@@ -12,6 +12,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -48,6 +49,18 @@ public class UsuarioServiceImpl implements UsuarioService {
             return true;
         } catch (Exception e){
             return false;
+        }
+    }
+
+    public UsuarioDTO login(String email, String senha){
+        Usuario usuario = usuarioRepository.findByEmail(email);
+        if(usuario == null){
+            throw new RuntimeException("Usuário não cadastrado!");
+        } else if(!senha.equals(usuario.getSenha())){
+            throw new RuntimeException("Senha errada!");
+        } else{
+            UsuarioDTO DTO = modelMapper.map(usuario, UsuarioDTO.class);
+            return DTO;
         }
     }
 }
