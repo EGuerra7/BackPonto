@@ -9,6 +9,7 @@ import java.util.List;
 public interface UsuarioService {
     UsuarioDTO cadastrar(UsuarioDTO usuarioDTO);
     List<UsuarioDTO> listar();
+    UsuarioDTO listarUm(String id);
     boolean deletar(String id);
     UsuarioDTO login(String email, String senha);
 }

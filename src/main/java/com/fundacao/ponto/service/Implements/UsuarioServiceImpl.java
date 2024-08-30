@@ -42,6 +42,13 @@ public class UsuarioServiceImpl implements UsuarioService {
             .collect(Collectors.toList());
     }
 
+    public UsuarioDTO listarUm(String id){
+        Optional<Usuario> usuario = usuarioRepository.findById(id);
+        UsuarioDTO DTO = modelMapper.map(usuario, UsuarioDTO.class);
+
+        return DTO;
+    }
+
     @Transactional
     public boolean deletar(String id){
         try {
