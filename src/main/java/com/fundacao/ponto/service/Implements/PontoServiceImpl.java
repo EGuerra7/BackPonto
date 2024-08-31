@@ -8,10 +8,9 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PostMapping;
-
-import java.time.LocalTime;
+import java.time.YearMonth;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
@@ -64,5 +63,24 @@ public class PontoServiceImpl implements PontoService {
             .map(ponto -> modelMapper.map(ponto, PontoDTO.class))
             .collect(Collectors.toList());
     }
+
+    public List<PontoDTO> listarPontosIndividuais(String usuarioId){
+        List<Ponto> pontos = pontoRepository.findByUsuarioIdOrderByDataDesc(usuarioId);
+
+        return pontos.stream()
+                .map(ponto -> modelMapper.map(ponto, PontoDTO.class))
+                .collect(Collectors.toList());
+    }
+
+    public Map<YearMonth, Double> listarPorMes(String usuarioId){
+        List<Ponto> pontos = pontoRepository.findByUsuarioIdOrderByDataDesc(usuarioId);
+
+        return pontos.stream()
+                .collect(Collectors.groupingBy(
+                        ponto -> YearMonth.from(ponto.getData()), // Agrupa por mês e ano
+                        Collectors.summingDouble(Ponto::getHorasFeitas) // Soma o campo valor
+                ));
+    }
+
 
 }

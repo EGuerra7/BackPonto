@@ -2,7 +2,10 @@ package com.fundacao.ponto.service;
 
 import com.fundacao.ponto.entity.DTO.PontoDTO;
 
+import java.time.LocalDate;
+import java.time.YearMonth;
 import java.util.List;
+import java.util.Map;
 
 
 public interface PontoService {
@@ -12,4 +15,7 @@ public interface PontoService {
 
     List<PontoDTO> listarPontos();
 
+    List<PontoDTO> listarPontosIndividuais(String id);
+
+    Map<YearMonth, Double> listarPorMes(String usuarioId);
 }

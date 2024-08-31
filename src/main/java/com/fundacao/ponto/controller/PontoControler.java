@@ -5,7 +5,9 @@ import com.fundacao.ponto.service.PontoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.YearMonth;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/ponto")
@@ -27,5 +29,15 @@ public class PontoControler {
     @GetMapping
     public List<PontoDTO> listarPontos(){
         return pontoService.listarPontos();
+    }
+
+    @GetMapping("{usuarioId}")
+    public List<PontoDTO> listarPontosIndividuais(@PathVariable String usuarioId){
+        return pontoService.listarPontosIndividuais(usuarioId);
+    }
+
+    @GetMapping("/mensal/{usuarioId}")
+    public Map<YearMonth, Double> listarMensal(@PathVariable String usuarioId){
+        return pontoService.listarPorMes(usuarioId);
     }
 }
