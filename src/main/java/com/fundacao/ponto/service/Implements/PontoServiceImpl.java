@@ -76,6 +76,7 @@ public class PontoServiceImpl implements PontoService {
         List<Ponto> pontos = pontoRepository.findByUsuarioIdOrderByDataDesc(usuarioId);
 
         return pontos.stream()
+                .filter(ponto -> ponto.getHorasFeitas() != null)
                 .collect(Collectors.groupingBy(
                         ponto -> YearMonth.from(ponto.getData()), // Agrupa por mês e ano
                         Collectors.summingDouble(Ponto::getHorasFeitas) // Soma o campo valor
