@@ -43,20 +43,17 @@ public class UsuarioServiceImpl implements UsuarioService {
     }
 
     public UsuarioDTO listarUm(String id){
-        Optional<Usuario> usuario = usuarioRepository.findById(id);
+        Optional<Usuario> usuario = Optional.ofNullable(usuarioRepository.findByIdAndAtivoIsNull(id));
         UsuarioDTO DTO = modelMapper.map(usuario, UsuarioDTO.class);
 
         return DTO;
     }
 
-    @Transactional
-    public boolean deletar(String id){
-        try {
-            usuarioRepository.deleteById(id);
-            return true;
-        } catch (Exception e){
-            return false;
-        }
+    public UsuarioDTO listarPorIdentificador(Integer identificador) {
+        Optional<Usuario> usuario = usuarioRepository.findById(identificador);
+        UsuarioDTO DTO = modelMapper.map(usuario, UsuarioDTO.class);
+
+        return DTO;
     }
 
     public UsuarioDTO login(String email, String senha){

@@ -28,13 +28,11 @@ public class UsuarioController {
     @GetMapping("{id}")
     public UsuarioDTO listarUm(@PathVariable String id){ return usuarioService.listarUm(id); }
 
+    @GetMapping("/identificador/{identificador}")
+    public UsuarioDTO listarPorIdentificador(@PathVariable Integer identificador){ return  usuarioService.listarPorIdentificador(identificador); }
+
     @PutMapping
     public UsuarioDTO editar(@RequestBody UsuarioDTO usuarioDTO){ return usuarioService.cadastrar(usuarioDTO);}
-
-    @DeleteMapping("{id}")
-    public boolean deletar(@PathVariable("id") String id){
-        return usuarioService.deletar(id);
-    }
 
     @PostMapping("/login")
     public UsuarioDTO login(@RequestBody LoginDTO login){

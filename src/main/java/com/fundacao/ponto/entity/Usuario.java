@@ -12,7 +12,11 @@ import java.time.LocalTime;
 @Data
 public class Usuario {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
+    private Integer Identificador;
+
+    @Column(name = "uid")
     private String id;
 
     @Column(name = "nome")
@@ -29,6 +33,9 @@ public class Usuario {
 
     @Column(name = "senha")
     private String senha;
+
+    @Column(name = "ativo")
+    private boolean ativo;
 
     @Column(name = "permissao")
     private String permissao;
