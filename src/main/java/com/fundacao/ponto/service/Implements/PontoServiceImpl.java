@@ -21,7 +21,7 @@ public class PontoServiceImpl implements PontoService {
     private ModelMapper modelMapper;
 
     public PontoDTO registrarEntrada(PontoDTO pontoDTO){
-        Ponto buscaPonto = pontoRepository.findByUsuarioIdAndDataAndHoraFinalIsNull(pontoDTO.getUsuarioId(), pontoDTO.getData());
+        Ponto buscaPonto = pontoRepository.findByUsuarioRfidAndDataAndHoraFinalIsNull(pontoDTO.getUsuarioRfid(), pontoDTO.getData());
         if(buscaPonto == null) {
             Ponto ponto = modelMapper.map(pontoDTO, Ponto.class);
             if (pontoDTO.getHoraFinal() != null) {
@@ -39,7 +39,7 @@ public class PontoServiceImpl implements PontoService {
 
     public PontoDTO registrarSaida(PontoDTO pontoDTO) {
 
-        Ponto buscaPonto = pontoRepository.findByUsuarioIdAndDataAndHoraFinalIsNull(pontoDTO.getUsuarioId(), pontoDTO.getData());
+        Ponto buscaPonto = pontoRepository.findByUsuarioRfidAndDataAndHoraFinalIsNull(pontoDTO.getUsuarioRfid(), pontoDTO.getData());
 
         if (buscaPonto != null) {
             buscaPonto.setHoraFinal(pontoDTO.getHoraFinal());
@@ -64,16 +64,16 @@ public class PontoServiceImpl implements PontoService {
             .collect(Collectors.toList());
     }
 
-    public List<PontoDTO> listarPontosIndividuais(Integer usuarioIdentificador){
-        List<Ponto> pontos = pontoRepository.findByUsuarioIdentificadorOrderByDataDesc(usuarioIdentificador);
+    public List<PontoDTO> listarPontosIndividuais(Integer usuarioId){
+        List<Ponto> pontos = pontoRepository.findByUsuarioIdOrderByDataDesc(usuarioId);
 
         return pontos.stream()
                 .map(ponto -> modelMapper.map(ponto, PontoDTO.class))
                 .collect(Collectors.toList());
     }
 
-    public Map<YearMonth, Double> listarPorMes(Integer usuarioIdentificador){
-        List<Ponto> pontos = pontoRepository.findByUsuarioIdentificadorOrderByDataDesc(usuarioIdentificador);
+    public Map<YearMonth, Double> listarPorMes(Integer usuarioId){
+        List<Ponto> pontos = pontoRepository.findByUsuarioIdOrderByDataDesc(usuarioId);
 
         return pontos.stream()
                 .filter(ponto -> ponto.getHorasFeitas() != null)

@@ -42,15 +42,15 @@ public class UsuarioServiceImpl implements UsuarioService {
             .collect(Collectors.toList());
     }
 
-    public UsuarioDTO listarUm(String id){
-        Optional<Usuario> usuario = Optional.ofNullable(usuarioRepository.findById(id));
+    public UsuarioDTO listarUm(String rfid){
+        Optional<Usuario> usuario = Optional.ofNullable(usuarioRepository.findByRfid(rfid));
         UsuarioDTO DTO = modelMapper.map(usuario, UsuarioDTO.class);
 
         return DTO;
     }
 
-    public UsuarioDTO listarPorIdentificador(Integer identificador) {
-        Optional<Usuario> usuario = usuarioRepository.findById(identificador);
+    public UsuarioDTO listarPorId(Integer id) {
+        Optional<Usuario> usuario = usuarioRepository.findById(id);
         UsuarioDTO DTO = modelMapper.map(usuario, UsuarioDTO.class);
 
         return DTO;

@@ -13,23 +13,23 @@ public class PontoDTO {
     private LocalTime horaInicial;
     private LocalTime horaFinal;
     private LocalDate data;
-    private String usuarioId;
-    private Integer usuarioIdentificador;
+    private String usuarioRfid;
+    private Integer usuarioId;
     private Double horasFeitas;
     private String descricao;
 
-    public PontoDTO(LocalTime horaInicial, LocalDate data, String usuarioId, Integer usuarioIdentificador, String descricao) {
+    public PontoDTO(LocalTime horaInicial, LocalDate data, String usuarioRfid, Integer usuarioId, String descricao) {
+        this.usuarioRfid = usuarioRfid;
         this.usuarioId = usuarioId;
-        this.usuarioIdentificador = usuarioIdentificador;
         this.horaInicial = horaInicial;
         this.data = data;
         this.descricao = descricao;
     }
 
-    public PontoDTO(String descricao, String usuarioId, Integer usuarioIdentificador, LocalDate data, LocalTime horaFinal, LocalTime horaInicial) {
+    public PontoDTO(String descricao, String usuarioRfid, Integer usuarioId, LocalDate data, LocalTime horaFinal, LocalTime horaInicial) {
         this.descricao = descricao;
+        this.usuarioRfid = usuarioRfid;
         this.usuarioId = usuarioId;
-        this.usuarioIdentificador = usuarioIdentificador;
         this.data = data;
         this.horaFinal = horaFinal;
         this.horaInicial = horaInicial;

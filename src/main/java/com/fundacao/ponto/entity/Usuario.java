@@ -14,10 +14,10 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private Integer identificador;
+    private Integer id;
 
-    @Column(name = "uid")
-    private String id;
+    @Column(name = "rfid")
+    private String rfid;
 
     @Column(name = "nome")
     private String nome;

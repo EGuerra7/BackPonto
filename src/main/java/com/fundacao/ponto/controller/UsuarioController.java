@@ -25,11 +25,11 @@ public class UsuarioController {
         return usuarioService.listar();
     }
 
-    @GetMapping("{id}")
-    public UsuarioDTO listarUm(@PathVariable String id){ return usuarioService.listarUm(id); }
+    @GetMapping("{rfid}")
+    public UsuarioDTO listarUm(@PathVariable String rfid){ return usuarioService.listarUm(rfid); }
 
-    @GetMapping("/identificador/{identificador}")
-    public UsuarioDTO listarPorIdentificador(@PathVariable Integer identificador){ return  usuarioService.listarPorIdentificador(identificador); }
+    @GetMapping("/identificador/{id}")
+    public UsuarioDTO listarPorIdentificador(@PathVariable Integer id){ return  usuarioService.listarPorId(id); }
 
     @PutMapping
     public UsuarioDTO editar(@RequestBody UsuarioDTO usuarioDTO){ return usuarioService.cadastrar(usuarioDTO);}

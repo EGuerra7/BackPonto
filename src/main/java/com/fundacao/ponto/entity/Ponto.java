@@ -27,11 +27,11 @@ public class Ponto {
     @Column(name = "data")
     private LocalDate data;
 
-    @Column(name = "usuarioId")
-    private String usuarioId;
+    @Column(name = "usuarioRfid")
+    private String usuarioRfid;
 
-    @Column(name = "usuarioIdentificador")
-    private Integer usuarioIdentificador;
+    @Column(name = "usuarioId")
+    private Integer usuarioId;
 
     @Column(name = "HorasFeitas")
     private Double horasFeitas;
@@ -41,9 +41,9 @@ public class Ponto {
 
 
 
-    public Ponto(LocalTime horaInicial, LocalDate data, String usuarioId, Integer usuarioIdentificador ,String descricao) {
-        this.usuarioId = usuarioId;
-        this.usuarioIdentificador = usuarioIdentificador;
+    public Ponto(LocalTime horaInicial, LocalDate data, String usuarioRfid, Integer usuarioIdentificador ,String descricao) {
+        this.usuarioRfid = usuarioRfid;
+        this.usuarioId = usuarioIdentificador;
         this.horaInicial = horaInicial;
         this.data = data;
         this.descricao = descricao;
@@ -57,10 +57,10 @@ public class Ponto {
         this.horasFeitas = minutes;
     }
 
-    public Ponto(String descricao, String usuarioId, Integer usuarioIdentificador, LocalDate data, LocalTime horaFinal, LocalTime horaInicial) {
+    public Ponto(String descricao, String usuarioRfid, Integer usuarioIdentificador, LocalDate data, LocalTime horaFinal, LocalTime horaInicial) {
         this.descricao = descricao;
-        this.usuarioId = usuarioId;
-        this.usuarioIdentificador = usuarioIdentificador;
+        this.usuarioRfid = usuarioRfid;
+        this.usuarioId = usuarioIdentificador;
         this.data = data;
         this.horaFinal = horaFinal;
         this.horaInicial = horaInicial;
