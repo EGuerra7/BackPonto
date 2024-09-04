@@ -31,13 +31,13 @@ public class PontoControler {
         return pontoService.listarPontos();
     }
 
-    @GetMapping("{usuarioId}")
-    public List<PontoDTO> listarPontosIndividuais(@PathVariable String usuarioId){
-        return pontoService.listarPontosIndividuais(usuarioId);
+    @GetMapping("{usuarioIdentificador}")
+    public List<PontoDTO> listarPontosIndividuais(@PathVariable Integer usuarioIdentificador){
+        return pontoService.listarPontosIndividuais(usuarioIdentificador);
     }
 
-    @GetMapping("/mensal/{usuarioId}")
-    public Map<YearMonth, Double> listarMensal(@PathVariable String usuarioId){
-        return pontoService.listarPorMes(usuarioId);
+    @GetMapping("/mensal/{usuarioIdentificador}")
+    public Map<YearMonth, Double> listarMensal(@PathVariable Integer usuarioIdentificador){
+        return pontoService.listarPorMes(usuarioIdentificador);
     }
 }

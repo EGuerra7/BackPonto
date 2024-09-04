@@ -10,7 +10,7 @@ import java.time.LocalTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UsuarioDTO {
-    private Integer Identificador;
+    private Integer identificador;
     private String id;
     private String nome;
     private LocalTime cargaHoraria;

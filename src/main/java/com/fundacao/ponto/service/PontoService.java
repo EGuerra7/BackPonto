@@ -15,7 +15,7 @@ public interface PontoService {
 
     List<PontoDTO> listarPontos();
 
-    List<PontoDTO> listarPontosIndividuais(String id);
+    List<PontoDTO> listarPontosIndividuais(Integer id);
 
-    Map<YearMonth, Double> listarPorMes(String usuarioId);
+    Map<YearMonth, Double> listarPorMes(Integer usuarioIdentificador);
 }

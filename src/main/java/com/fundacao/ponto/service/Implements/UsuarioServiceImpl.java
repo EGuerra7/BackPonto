@@ -43,7 +43,7 @@ public class UsuarioServiceImpl implements UsuarioService {
     }
 
     public UsuarioDTO listarUm(String id){
-        Optional<Usuario> usuario = Optional.ofNullable(usuarioRepository.findByIdAndAtivoIsNull(id));
+        Optional<Usuario> usuario = Optional.ofNullable(usuarioRepository.findById(id));
         UsuarioDTO DTO = modelMapper.map(usuario, UsuarioDTO.class);
 
         return DTO;

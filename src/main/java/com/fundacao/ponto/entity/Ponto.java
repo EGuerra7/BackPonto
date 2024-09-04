@@ -30,6 +30,9 @@ public class Ponto {
     @Column(name = "usuarioId")
     private String usuarioId;
 
+    @Column(name = "usuarioIdentificador")
+    private Integer usuarioIdentificador;
+
     @Column(name = "HorasFeitas")
     private Double horasFeitas;
 
@@ -38,8 +41,9 @@ public class Ponto {
 
 
 
-    public Ponto(LocalTime horaInicial, LocalDate data, String usuarioId, String descricao) {
+    public Ponto(LocalTime horaInicial, LocalDate data, String usuarioId, Integer usuarioIdentificador ,String descricao) {
         this.usuarioId = usuarioId;
+        this.usuarioIdentificador = usuarioIdentificador;
         this.horaInicial = horaInicial;
         this.data = data;
         this.descricao = descricao;
@@ -53,9 +57,10 @@ public class Ponto {
         this.horasFeitas = minutes;
     }
 
-    public Ponto(String descricao, String usuarioId, LocalDate data, LocalTime horaFinal, LocalTime horaInicial) {
+    public Ponto(String descricao, String usuarioId, Integer usuarioIdentificador, LocalDate data, LocalTime horaFinal, LocalTime horaInicial) {
         this.descricao = descricao;
         this.usuarioId = usuarioId;
+        this.usuarioIdentificador = usuarioIdentificador;
         this.data = data;
         this.horaFinal = horaFinal;
         this.horaInicial = horaInicial;

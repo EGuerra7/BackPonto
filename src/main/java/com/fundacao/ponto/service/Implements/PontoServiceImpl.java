@@ -64,16 +64,16 @@ public class PontoServiceImpl implements PontoService {
             .collect(Collectors.toList());
     }
 
-    public List<PontoDTO> listarPontosIndividuais(String usuarioId){
-        List<Ponto> pontos = pontoRepository.findByUsuarioIdOrderByDataDesc(usuarioId);
+    public List<PontoDTO> listarPontosIndividuais(Integer usuarioIdentificador){
+        List<Ponto> pontos = pontoRepository.findByUsuarioIdentificadorOrderByDataDesc(usuarioIdentificador);
 
         return pontos.stream()
                 .map(ponto -> modelMapper.map(ponto, PontoDTO.class))
                 .collect(Collectors.toList());
     }
 
-    public Map<YearMonth, Double> listarPorMes(String usuarioId){
-        List<Ponto> pontos = pontoRepository.findByUsuarioIdOrderByDataDesc(usuarioId);
+    public Map<YearMonth, Double> listarPorMes(Integer usuarioIdentificador){
+        List<Ponto> pontos = pontoRepository.findByUsuarioIdentificadorOrderByDataDesc(usuarioIdentificador);
 
         return pontos.stream()
                 .filter(ponto -> ponto.getHorasFeitas() != null)
