@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae35694d-b9ef-4bb1-8bbf-482d65760a91" name="Changes" comment="mysql3">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fundacao/ponto/PontoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fundacao/ponto/PontoApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fundacao/ponto/repository/PontoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fundacao/ponto/repository/PontoRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fundacao/ponto/CORS/WebConfig$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fundacao/ponto/CORS/WebConfig$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fundacao/ponto/PontoApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fundacao/ponto/PontoApplication.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
