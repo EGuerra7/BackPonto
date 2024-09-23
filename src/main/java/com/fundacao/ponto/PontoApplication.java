@@ -10,11 +10,6 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class PontoApplication {
 	public static void main(String[] args) {
-		// Obtém a porta a partir da variável de ambiente
-        int port = Integer.parseInt(System.getenv("PORT"));
-
-        // Configura a aplicação para escutar na porta especificada
-        System.setProperty("server.port", String.valueOf(port));
 		
 		new SpringApplicationBuilder(PontoApplication.class).run(args);
 	}
