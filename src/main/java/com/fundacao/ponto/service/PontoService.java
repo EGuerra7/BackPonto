@@ -18,4 +18,6 @@ public interface PontoService {
     List<PontoDTO> listarPontosIndividuais(Integer id);
 
     Map<YearMonth, Double> listarPorMes(Integer usuarioId);
+
+    PontoDTO ativo(long id, boolean ativo);
 }

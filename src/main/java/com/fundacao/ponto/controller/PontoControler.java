@@ -26,6 +26,8 @@ public class PontoControler {
         return pontoService.registrarSaida(pontoDTO);
     }
 
+    @PutMapping("/{id}")
+    public PontoDTO ativo(@PathVariable long id, @RequestBody Map<String, Boolean> ativo){ return pontoService.ativo(id, ativo.get("ativo")); }
     @GetMapping
     public List<PontoDTO> listarPontos(){
         return pontoService.listarPontos();

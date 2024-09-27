@@ -39,14 +39,18 @@ public class Ponto {
     @Column(name = "descricao")
     private String descricao;
 
+    @Column(name = "ativo")
+    private boolean ativo;
 
 
-    public Ponto(LocalTime horaInicial, LocalDate data, String usuarioRfid, Integer usuarioIdentificador ,String descricao) {
+
+    public Ponto(LocalTime horaInicial, LocalDate data, String usuarioRfid, Integer usuarioIdentificador ,String descricao, boolean ativo) {
         this.usuarioRfid = usuarioRfid;
         this.usuarioId = usuarioIdentificador;
         this.horaInicial = horaInicial;
         this.data = data;
         this.descricao = descricao;
+        this.ativo = ativo;
     }
 
     public void calcularHoras(LocalTime horaInicial,LocalTime horaFinal){
@@ -57,12 +61,13 @@ public class Ponto {
         this.horasFeitas = minutes;
     }
 
-    public Ponto(String descricao, String usuarioRfid, Integer usuarioIdentificador, LocalDate data, LocalTime horaFinal, LocalTime horaInicial) {
+    public Ponto(String descricao, String usuarioRfid, Integer usuarioIdentificador, LocalDate data, LocalTime horaFinal, LocalTime horaInicial, boolean ativo) {
         this.descricao = descricao;
         this.usuarioRfid = usuarioRfid;
         this.usuarioId = usuarioIdentificador;
         this.data = data;
         this.horaFinal = horaFinal;
         this.horaInicial = horaInicial;
+        this.ativo = ativo;
     }
 }

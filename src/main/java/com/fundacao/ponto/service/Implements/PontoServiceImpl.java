@@ -6,6 +6,7 @@ import com.fundacao.ponto.repository.PontoRepository;
 import com.fundacao.ponto.service.PontoService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.config.ConfigDataResourceNotFoundException;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import java.time.YearMonth;
@@ -21,7 +22,7 @@ public class PontoServiceImpl implements PontoService {
     private ModelMapper modelMapper;
 
     public PontoDTO registrarEntrada(PontoDTO pontoDTO){
-        Ponto buscaPonto = pontoRepository.findByUsuarioRfidAndDataAndHoraFinalIsNull(pontoDTO.getUsuarioRfid(), pontoDTO.getData());
+        Ponto buscaPonto = pontoRepository.findByUsuarioRfidAndDataAndHoraFinalIsNullAndAtivoIsTrue(pontoDTO.getUsuarioRfid(), pontoDTO.getData());
         if(buscaPonto == null) {
             Ponto ponto = modelMapper.map(pontoDTO, Ponto.class);
             if (pontoDTO.getHoraFinal() != null) {
@@ -39,7 +40,7 @@ public class PontoServiceImpl implements PontoService {
 
     public PontoDTO registrarSaida(PontoDTO pontoDTO) {
 
-        Ponto buscaPonto = pontoRepository.findByUsuarioRfidAndDataAndHoraFinalIsNull(pontoDTO.getUsuarioRfid(), pontoDTO.getData());
+        Ponto buscaPonto = pontoRepository.findByUsuarioRfidAndDataAndHoraFinalIsNullAndAtivoIsTrue(pontoDTO.getUsuarioRfid(), pontoDTO.getData());
 
         if (buscaPonto != null) {
             buscaPonto.setHoraFinal(pontoDTO.getHoraFinal());
@@ -76,11 +77,20 @@ public class PontoServiceImpl implements PontoService {
         List<Ponto> pontos = pontoRepository.findByUsuarioIdOrderByDataDesc(usuarioId);
 
         return pontos.stream()
-                .filter(ponto -> ponto.getHorasFeitas() != null)
+                .filter(ponto -> ponto.getHorasFeitas() != null && ponto.isAtivo())
                 .collect(Collectors.groupingBy(
                         ponto -> YearMonth.from(ponto.getData()), // Agrupa por mês e ano
                         Collectors.summingDouble(Ponto::getHorasFeitas) // Soma o campo valor
                 ));
+    }
+
+    public PontoDTO ativo(long id, boolean ativo){
+        Ponto ponto = pontoRepository.findById(id)
+            .orElseThrow(() -> new RuntimeException("Ponto não encontrado com o id:" + id));
+        ponto.setAtivo(ativo);
+        pontoRepository.save(ponto);
+        PontoDTO DTO = modelMapper.map(ponto, PontoDTO.class);
+        return DTO;
     }
 
 

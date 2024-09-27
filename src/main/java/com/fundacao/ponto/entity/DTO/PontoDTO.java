@@ -17,21 +17,24 @@ public class PontoDTO {
     private Integer usuarioId;
     private Double horasFeitas;
     private String descricao;
+    private boolean ativo;
 
-    public PontoDTO(LocalTime horaInicial, LocalDate data, String usuarioRfid, Integer usuarioId, String descricao) {
+    public PontoDTO(LocalTime horaInicial, LocalDate data, String usuarioRfid, Integer usuarioId, String descricao, boolean ativo) {
         this.usuarioRfid = usuarioRfid;
         this.usuarioId = usuarioId;
         this.horaInicial = horaInicial;
         this.data = data;
         this.descricao = descricao;
+        this.ativo = ativo;
     }
 
-    public PontoDTO(String descricao, String usuarioRfid, Integer usuarioId, LocalDate data, LocalTime horaFinal, LocalTime horaInicial) {
+    public PontoDTO(String descricao, String usuarioRfid, Integer usuarioId, LocalDate data, LocalTime horaFinal, LocalTime horaInicial, boolean ativo) {
         this.descricao = descricao;
         this.usuarioRfid = usuarioRfid;
         this.usuarioId = usuarioId;
         this.data = data;
         this.horaFinal = horaFinal;
         this.horaInicial = horaInicial;
+        this.ativo = ativo;
     }
 }
