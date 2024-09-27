@@ -4,16 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ae35694d-b9ef-4bb1-8bbf-482d65760a91" name="Changes" comment="MySQL remoto 1.3">
+    <list default="true" id="ae35694d-b9ef-4bb1-8bbf-482d65760a91" name="Changes" comment="FINALMENTE">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fundacao/ponto/CORS/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fundacao/ponto/CORS/WebConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fundacao/ponto/controller/PontoControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fundacao/ponto/controller/PontoControler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fundacao/ponto/entity/DTO/PontoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fundacao/ponto/entity/DTO/PontoDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fundacao/ponto/entity/Ponto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fundacao/ponto/entity/Ponto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fundacao/ponto/repository/PontoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fundacao/ponto/repository/PontoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fundacao/ponto/service/Implements/PontoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fundacao/ponto/service/Implements/PontoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fundacao/ponto/service/PontoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fundacao/ponto/service/PontoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fundacao/ponto/CORS/WebConfig$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fundacao/ponto/CORS/WebConfig$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fundacao/ponto/PontoApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fundacao/ponto/PontoApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fundacao/ponto/controller/PontoControler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fundacao/ponto/controller/PontoControler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fundacao/ponto/entity/DTO/PontoDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fundacao/ponto/entity/DTO/PontoDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fundacao/ponto/entity/Ponto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fundacao/ponto/entity/Ponto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fundacao/ponto/repository/PontoRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fundacao/ponto/repository/PontoRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fundacao/ponto/service/Implements/PontoServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fundacao/ponto/service/Implements/PontoServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fundacao/ponto/service/PontoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fundacao/ponto/service/PontoService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,7 +174,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727108665885</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="FINALMENTE">
+      <option name="closed" value="true" />
+      <created>1727462299062</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1727462299063</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -187,7 +198,8 @@
     <MESSAGE value="MySQL remoto 1.1" />
     <MESSAGE value="MySQL remoto 1.2" />
     <MESSAGE value="MySQL remoto 1.3" />
-    <option name="LAST_COMMIT_MESSAGE" value="MySQL remoto 1.3" />
+    <MESSAGE value="FINALMENTE" />
+    <option name="LAST_COMMIT_MESSAGE" value="FINALMENTE" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
