@@ -4,9 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ae35694d-b9ef-4bb1-8bbf-482d65760a91" name="Changes" comment="Ponto 2.2">
+    <list default="true" id="ae35694d-b9ef-4bb1-8bbf-482d65760a91" name="Changes" comment="Ponto LocalHost feito">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fundacao/ponto/controller/RfidControler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fundacao/ponto/CORS/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fundacao/ponto/CORS/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fundacao/ponto/CORS/WebConfig$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fundacao/ponto/CORS/WebConfig$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ponto-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/ponto-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ponto-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/ponto-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.fundacao.ponto.PontoApplicationTests.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.fundacao.ponto.PontoApplicationTests.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/fundacao/ponto/PontoApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/fundacao/ponto/PontoApplicationTests.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,7 +215,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727466324206</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Ponto LocalHost">
+      <option name="closed" value="true" />
+      <created>1728054009728</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1728054009728</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -224,21 +243,8 @@
     <MESSAGE value="Ponto 2.0" />
     <MESSAGE value="Ponto 2.1" />
     <MESSAGE value="Ponto 2.2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ponto 2.2" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/fundacao/ponto/controller/PontoControler.java</url>
-          <line>19</line>
-          <properties class="com.fundacao.ponto.controller.PontoControler" method="registrarEntrada">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Ponto LocalHost" />
+    <MESSAGE value="Ponto LocalHost feito" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ponto LocalHost feito" />
   </component>
 </project>
