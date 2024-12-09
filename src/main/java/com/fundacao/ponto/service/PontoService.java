@@ -1,5 +1,6 @@
 package com.fundacao.ponto.service;
 
+import com.fundacao.ponto.entity.DTO.PontoComUsuarioDTO;
 import com.fundacao.ponto.entity.DTO.PontoDTO;
 
 import java.time.LocalDate;
@@ -13,7 +14,7 @@ public interface PontoService {
 
     PontoDTO registrarSaida(PontoDTO ponto);
 
-    List<PontoDTO> listarPontos();
+    List<PontoComUsuarioDTO> listarPontos();
 
     List<PontoDTO> listarPontosIndividuais(Integer id);
 

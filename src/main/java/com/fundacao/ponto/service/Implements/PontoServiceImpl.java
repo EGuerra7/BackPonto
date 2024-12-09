@@ -1,8 +1,10 @@
 package com.fundacao.ponto.service.Implements;
 
+import com.fundacao.ponto.entity.DTO.PontoComUsuarioDTO;
 import com.fundacao.ponto.entity.DTO.PontoDTO;
 import com.fundacao.ponto.entity.Ponto;
 import com.fundacao.ponto.repository.PontoRepository;
+import com.fundacao.ponto.repository.UsuarioRepository;
 import com.fundacao.ponto.service.PontoService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +22,8 @@ public class PontoServiceImpl implements PontoService {
     private PontoRepository pontoRepository;
     @Autowired
     private ModelMapper modelMapper;
+    @Autowired
+    private UsuarioRepository usuarioRepository;
 
     public PontoDTO registrarEntrada(PontoDTO pontoDTO){
         Ponto buscaPonto = pontoRepository.findByUsuarioRfidAndDataAndHoraFinalIsNullAndAtivoIsTrue(pontoDTO.getUsuarioRfid(), pontoDTO.getData());
@@ -55,13 +59,27 @@ public class PontoServiceImpl implements PontoService {
         }
     }
 
-    public List<PontoDTO> listarPontos(){
+    public List<PontoComUsuarioDTO> listarPontos(){
         Sort ordenarPorData = Sort.by("data").descending();
         List<Ponto> pontos = pontoRepository.findAll(ordenarPorData).stream().toList();
 
-        return pontos
-            .stream()
-            .map(ponto -> modelMapper.map(ponto, PontoDTO.class))
+        return pontos.stream()
+            .map(ponto -> {
+                Usuario usuario = usuarioRepository.findById(ponto.getUsuarioId())
+                    .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
+
+                return new PontoComUsuarioDTO(
+                    ponto.getId(),
+                    ponto.getHoraInicial(),
+                    ponto.getHoraFinal(),
+                    ponto.getData(),
+                    ponto.getHorasFeitas(),
+                    ponto.getDescricao(),
+                    ponto.isAtivo(),
+                    usuario.getId(),
+                    usuario.getNome()
+                );
+            })
             .collect(Collectors.toList());
     }
 
