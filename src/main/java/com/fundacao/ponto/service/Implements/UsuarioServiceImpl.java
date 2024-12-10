@@ -33,7 +33,10 @@ public class UsuarioServiceImpl implements UsuarioService {
     }
 
     public List<UsuarioDTO> listar(){
-        Sort ordenar = Sort.by("nome").ascending();
+        Sort ordenar = Sort.by(
+            Sort.Order.desc("ativo"),
+            Sort.Order.asc("nome")
+        );
         List<Usuario> usuarios = usuarioRepository.findAll(ordenar).stream().toList();
 
         return usuarios
