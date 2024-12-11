@@ -1,10 +1,8 @@
 package com.fundacao.ponto.service;
 
-import com.fundacao.ponto.entity.DTO.UsuarioDTO;
-import com.fundacao.ponto.repository.UsuarioRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-
 import java.util.List;
+
+import com.fundacao.ponto.entity.DTO.UsuarioDTO;
 
 public interface UsuarioService {
     UsuarioDTO cadastrar(UsuarioDTO usuarioDTO);

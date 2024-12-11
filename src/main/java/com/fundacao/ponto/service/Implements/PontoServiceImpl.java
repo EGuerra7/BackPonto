@@ -1,20 +1,22 @@
 package com.fundacao.ponto.service.Implements;
 
-import com.fundacao.ponto.entity.DTO.PontoComUsuarioDTO;
-import com.fundacao.ponto.entity.DTO.PontoDTO;
-import com.fundacao.ponto.entity.Ponto;
-import com.fundacao.ponto.repository.PontoRepository;
-import com.fundacao.ponto.repository.UsuarioRepository;
-import com.fundacao.ponto.service.PontoService;
-import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.config.ConfigDataResourceNotFoundException;
-import org.springframework.data.domain.Sort;
-import org.springframework.stereotype.Service;
 import java.time.YearMonth;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Service;
+
+import com.fundacao.ponto.entity.DTO.PontoComUsuarioDTO;
+import com.fundacao.ponto.entity.DTO.PontoDTO;
+import com.fundacao.ponto.entity.Ponto;
+import com.fundacao.ponto.entity.Usuario;
+import com.fundacao.ponto.repository.PontoRepository;
+import com.fundacao.ponto.repository.UsuarioRepository;
+import com.fundacao.ponto.service.PontoService;
 
 @Service
 public class PontoServiceImpl implements PontoService {
@@ -25,6 +27,7 @@ public class PontoServiceImpl implements PontoService {
     @Autowired
     private UsuarioRepository usuarioRepository;
 
+    @Override
     public PontoDTO registrarEntrada(PontoDTO pontoDTO){
         Ponto buscaPonto = pontoRepository.findByUsuarioRfidAndDataAndHoraFinalIsNullAndAtivoIsTrue(pontoDTO.getUsuarioRfid(), pontoDTO.getData());
         if(buscaPonto == null) {
@@ -42,6 +45,7 @@ public class PontoServiceImpl implements PontoService {
         }
     }
 
+    @Override
     public PontoDTO registrarSaida(PontoDTO pontoDTO) {
 
         Ponto buscaPonto = pontoRepository.findByUsuarioRfidAndDataAndHoraFinalIsNullAndAtivoIsTrue(pontoDTO.getUsuarioRfid(), pontoDTO.getData());
@@ -59,6 +63,7 @@ public class PontoServiceImpl implements PontoService {
         }
     }
 
+    @Override
     public List<PontoComUsuarioDTO> listarPontos(){
         Sort ordenarPorData = Sort.by("data").descending();
         List<Ponto> pontos = pontoRepository.findAll(ordenarPorData).stream().toList();
@@ -83,6 +88,7 @@ public class PontoServiceImpl implements PontoService {
             .collect(Collectors.toList());
     }
 
+    @Override
     public List<PontoDTO> listarPontosIndividuais(Integer usuarioId){
         List<Ponto> pontos = pontoRepository.findByUsuarioIdOrderByDataDesc(usuarioId);
 
@@ -91,6 +97,7 @@ public class PontoServiceImpl implements PontoService {
                 .collect(Collectors.toList());
     }
 
+    @Override
     public Map<YearMonth, Double> listarPorMes(Integer usuarioId){
         List<Ponto> pontos = pontoRepository.findByUsuarioIdOrderByDataDesc(usuarioId);
 
@@ -102,6 +109,7 @@ public class PontoServiceImpl implements PontoService {
                 ));
     }
 
+    @Override
     public PontoDTO ativo(long id, boolean ativo){
         Ponto ponto = pontoRepository.findById(id)
             .orElseThrow(() -> new RuntimeException("Ponto não encontrado com o id:" + id));

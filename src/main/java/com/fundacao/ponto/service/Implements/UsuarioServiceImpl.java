@@ -1,20 +1,18 @@
 package com.fundacao.ponto.service.Implements;
 
-import com.fundacao.ponto.entity.DTO.UsuarioDTO;
-import com.fundacao.ponto.entity.Usuario;
-import com.fundacao.ponto.repository.PontoRepository;
-import com.fundacao.ponto.repository.UsuarioRepository;
-import com.fundacao.ponto.service.UsuarioService;
-import jakarta.transaction.Transactional;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.stream.Collectors;
+import com.fundacao.ponto.entity.DTO.UsuarioDTO;
+import com.fundacao.ponto.entity.Usuario;
+import com.fundacao.ponto.repository.UsuarioRepository;
+import com.fundacao.ponto.service.UsuarioService;
 
 @Service
 public class UsuarioServiceImpl implements UsuarioService {
@@ -24,7 +22,7 @@ public class UsuarioServiceImpl implements UsuarioService {
     @Autowired
     private ModelMapper modelMapper;
 
-
+    @Override
     public UsuarioDTO cadastrar(UsuarioDTO usuarioDTO){
         Usuario usuario = modelMapper.map(usuarioDTO, Usuario.class);
         usuarioRepository.save(usuario);
@@ -32,6 +30,7 @@ public class UsuarioServiceImpl implements UsuarioService {
         return DTO;
     }
 
+    @Override
     public List<UsuarioDTO> listar(){
         Sort ordenar = Sort.by(
             Sort.Order.desc("ativo"),
@@ -45,6 +44,7 @@ public class UsuarioServiceImpl implements UsuarioService {
             .collect(Collectors.toList());
     }
 
+    @Override
     public UsuarioDTO buscarPorRfid(String rfid){
         Optional<Usuario> usuario = Optional.ofNullable(usuarioRepository.findByRfidAndAtivoIsTrue(rfid));
         UsuarioDTO DTO = modelMapper.map(usuario, UsuarioDTO.class);
@@ -52,6 +52,7 @@ public class UsuarioServiceImpl implements UsuarioService {
         return DTO;
     }
 
+    @Override
     public UsuarioDTO buscarPorId(Integer id) {
         Optional<Usuario> usuario = usuarioRepository.findById(id);
         UsuarioDTO DTO = modelMapper.map(usuario, UsuarioDTO.class);
@@ -59,6 +60,7 @@ public class UsuarioServiceImpl implements UsuarioService {
         return DTO;
     }
 
+    @Override
     public UsuarioDTO login(String email, String senha){
         Usuario usuario = usuarioRepository.findByEmail(email);
         if(usuario == null){
