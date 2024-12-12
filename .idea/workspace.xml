@@ -5,19 +5,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae35694d-b9ef-4bb1-8bbf-482d65760a91" name="Changes" comment="Ponto LocalHost feito">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/fundacao/ponto/controller/RfidControler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DockerFile" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fundacao/ponto/CORS/WebConfig$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fundacao/ponto/CORS/WebConfig$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ponto-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/ponto-0.0.1-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ponto-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/ponto-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.fundacao.ponto.PontoApplicationTests.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.fundacao.ponto.PontoApplicationTests.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/fundacao/ponto/PontoApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/fundacao/ponto/PontoApplicationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fundacao/ponto/PontoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fundacao/ponto/PontoApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fundacao/ponto/controller/PontoControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fundacao/ponto/controller/PontoControler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fundacao/ponto/entity/DTO/LoginDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fundacao/ponto/entity/DTO/LoginDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fundacao/ponto/entity/DTO/PontoComUsuarioDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fundacao/ponto/entity/DTO/PontoComUsuarioDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fundacao/ponto/entity/DTO/PontoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fundacao/ponto/entity/DTO/PontoDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fundacao/ponto/entity/DTO/UsuarioDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fundacao/ponto/entity/DTO/UsuarioDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fundacao/ponto/entity/Ponto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fundacao/ponto/entity/Ponto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fundacao/ponto/entity/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fundacao/ponto/entity/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/fundacao/ponto/PontoApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/fundacao/ponto/PontoApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fundacao/ponto/CORS/WebConfig$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fundacao/ponto/CORS/WebConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fundacao/ponto/PontoApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fundacao/ponto/controller/PontoControler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fundacao/ponto/controller/RfidControler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fundacao/ponto/controller/UsuarioController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fundacao/ponto/entity/DTO/LoginDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fundacao/ponto/entity/DTO/PontoComUsuarioDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fundacao/ponto/entity/DTO/PontoDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fundacao/ponto/entity/DTO/UsuarioDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fundacao/ponto/entity/Ponto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fundacao/ponto/entity/Usuario.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fundacao/ponto/repository/PontoRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fundacao/ponto/repository/UsuarioRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fundacao/ponto/service/Implements/PontoServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fundacao/ponto/service/Implements/UsuarioServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fundacao/ponto/service/PontoService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fundacao/ponto/service/UsuarioService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ponto-0.0.1-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ponto-0.0.1-SNAPSHOT.jar.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/fundacao/ponto/PontoApplicationTests.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +69,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/EGuerra7/BackPonto.git&quot;,
-    &quot;accountId&quot;: &quot;48fad98b-dd25-4edb-86b3-f1e478959e3a&quot;
+    &quot;accountId&quot;: &quot;49330a43-e288-4fb9-8b1e-d5a335becf54&quot;
   }
 }</component>
   <component name="JpbToolWindowState">
@@ -58,18 +84,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.PontoApplication.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.PontoApplicationTests.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.PontoApplication.executor": "Debug",
+    "JUnit.PontoApplicationTests.executor": "Debug",
+    "Maven.ponto [org.apache.maven.plugins:maven-clean-plugin:3.3.2:clean].executor": "Run",
+    "Maven.ponto [org.apache.maven.plugins:maven-compiler-plugin:3.13.0:compile].executor": "Run",
+    "Maven.ponto [org.apache.maven.plugins:maven-install-plugin:3.1.2:install].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

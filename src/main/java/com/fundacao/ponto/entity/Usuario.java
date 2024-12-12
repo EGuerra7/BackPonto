@@ -1,15 +1,12 @@
 package com.fundacao.ponto.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
+
 
 import java.time.LocalTime;
 
 @Entity
 @Table(name = "usuarios")
-@NoArgsConstructor
-@AllArgsConstructor
-@Data
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -40,4 +37,90 @@ public class Usuario {
     @Column(name = "permissao")
     private String permissao;
 
+    public Usuario() {
+    }
+
+    public Usuario(Integer id, String rfid, String nome, LocalTime cargaHoraria, String cargo, String email, String senha, boolean ativo, String permissao) {
+        this.id = id;
+        this.rfid = rfid;
+        this.nome = nome;
+        this.cargaHoraria = cargaHoraria;
+        this.cargo = cargo;
+        this.email = email;
+        this.senha = senha;
+        this.ativo = ativo;
+        this.permissao = permissao;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getRfid() {
+        return rfid;
+    }
+
+    public void setRfid(String rfid) {
+        this.rfid = rfid;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public LocalTime getCargaHoraria() {
+        return cargaHoraria;
+    }
+
+    public void setCargaHoraria(LocalTime cargaHoraria) {
+        this.cargaHoraria = cargaHoraria;
+    }
+
+    public String getCargo() {
+        return cargo;
+    }
+
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public boolean isAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(boolean ativo) {
+        this.ativo = ativo;
+    }
+
+    public String getPermissao() {
+        return permissao;
+    }
+
+    public void setPermissao(String permissao) {
+        this.permissao = permissao;
+    }
 }

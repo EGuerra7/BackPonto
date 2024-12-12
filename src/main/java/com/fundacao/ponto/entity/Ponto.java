@@ -1,17 +1,13 @@
 package com.fundacao.ponto.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 
+
 @Table(name = "bancodehoras")
 @Entity
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class Ponto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -68,6 +64,81 @@ public class Ponto {
         this.data = data;
         this.horaFinal = horaFinal;
         this.horaInicial = horaInicial;
+        this.ativo = ativo;
+    }
+
+    public Ponto() {
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public LocalTime getHoraInicial() {
+        return horaInicial;
+    }
+
+    public void setHoraInicial(LocalTime horaInicial) {
+        this.horaInicial = horaInicial;
+    }
+
+    public LocalTime getHoraFinal() {
+        return horaFinal;
+    }
+
+    public void setHoraFinal(LocalTime horaFinal) {
+        this.horaFinal = horaFinal;
+    }
+
+    public LocalDate getData() {
+        return data;
+    }
+
+    public void setData(LocalDate data) {
+        this.data = data;
+    }
+
+    public String getUsuarioRfid() {
+        return usuarioRfid;
+    }
+
+    public void setUsuarioRfid(String usuarioRfid) {
+        this.usuarioRfid = usuarioRfid;
+    }
+
+    public Integer getUsuarioId() {
+        return usuarioId;
+    }
+
+    public void setUsuarioId(Integer usuarioId) {
+        this.usuarioId = usuarioId;
+    }
+
+    public Double getHorasFeitas() {
+        return horasFeitas;
+    }
+
+    public void setHorasFeitas(Double horasFeitas) {
+        this.horasFeitas = horasFeitas;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public boolean isAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(boolean ativo) {
         this.ativo = ativo;
     }
 }
