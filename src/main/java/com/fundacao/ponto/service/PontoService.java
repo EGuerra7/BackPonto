@@ -6,6 +6,7 @@ import java.util.Map;
 
 import com.fundacao.ponto.entity.DTO.PontoComUsuarioDTO;
 import com.fundacao.ponto.entity.DTO.PontoDTO;
+import com.fundacao.ponto.entity.DTO.PontosMensaisDTO;
 import com.fundacao.ponto.entity.Projeto;
 
 
@@ -18,7 +19,7 @@ public interface PontoService {
 
     List<PontoDTO> listarPontosIndividuais(Integer id);
 
-    Map<YearMonth, Map<Projeto, Double>> listarPorMes(Integer usuarioId);
+    List<PontosMensaisDTO> listarPorMes(Integer usuarioId);
 
     PontoDTO ativo(long id, boolean ativo);
 }

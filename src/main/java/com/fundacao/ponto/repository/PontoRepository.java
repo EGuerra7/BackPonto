@@ -12,5 +12,5 @@ import java.util.List;
 @Repository
 public interface PontoRepository extends JpaRepository<Ponto, Long> {
     Ponto findByUsuarioRfidAndDataAndHoraFinalIsNullAndAtivoIsTrue(String usuarioRfid, LocalDate data);
-    List<Ponto> findByUsuarioIdOrderByDataDesc(Integer usuarioId);
+    List<Ponto> findByUsuarioIdOrderByDataAsc(Integer usuarioId);
 }

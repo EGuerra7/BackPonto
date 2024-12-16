@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ae35694d-b9ef-4bb1-8bbf-482d65760a91" name="Changes" comment="Erro no lombok">
+    <list default="true" id="ae35694d-b9ef-4bb1-8bbf-482d65760a91" name="Changes" comment="Continuar em casa">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fundacao/ponto/entity/DTO/PontosMensaisDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fundacao/ponto/CORS/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fundacao/ponto/CORS/WebConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fundacao/ponto/controller/PontoControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fundacao/ponto/controller/PontoControler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fundacao/ponto/repository/PontoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fundacao/ponto/repository/PontoRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fundacao/ponto/service/Implements/PontoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fundacao/ponto/service/Implements/PontoServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fundacao/ponto/service/PontoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fundacao/ponto/service/PontoService.java" afterDir="false" />
     </list>
@@ -230,7 +231,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733967253208</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Continuar em casa">
+      <option name="closed" value="true" />
+      <created>1734359287015</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1734359287015</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -253,6 +262,7 @@
     <MESSAGE value="Ponto LocalHost" />
     <MESSAGE value="Ponto LocalHost feito" />
     <MESSAGE value="Erro no lombok" />
-    <option name="LAST_COMMIT_MESSAGE" value="Erro no lombok" />
+    <MESSAGE value="Continuar em casa" />
+    <option name="LAST_COMMIT_MESSAGE" value="Continuar em casa" />
   </component>
 </project>

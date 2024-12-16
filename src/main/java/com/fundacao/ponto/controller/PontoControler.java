@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 
+import com.fundacao.ponto.entity.DTO.PontosMensaisDTO;
 import com.fundacao.ponto.entity.Projeto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -50,7 +51,7 @@ public class PontoControler {
     }
 
     @GetMapping("/mensal/{usuarioId}")
-    public Map<YearMonth, Map<Projeto, Double>> listarMensal(@PathVariable Integer usuarioId){
+    public List<PontosMensaisDTO> listarMensal(@PathVariable Integer usuarioId){
         return pontoService.listarPorMes(usuarioId);
     }
 }

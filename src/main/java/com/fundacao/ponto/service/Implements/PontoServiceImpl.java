@@ -5,8 +5,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import com.fundacao.ponto.entity.DTO.PontosMensaisDTO;
 import com.fundacao.ponto.entity.DTO.ProjetoDTO;
-import com.fundacao.ponto.entity.Projeto;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
@@ -95,7 +95,7 @@ public class PontoServiceImpl implements PontoService {
 
     @Override
     public List<PontoDTO> listarPontosIndividuais(Integer usuarioId){
-        List<Ponto> pontos = pontoRepository.findByUsuarioIdOrderByDataDesc(usuarioId);
+        List<Ponto> pontos = pontoRepository.findByUsuarioIdOrderByDataAsc(usuarioId);
 
         return pontos.stream()
                 .map(ponto -> modelMapper.map(ponto, PontoDTO.class))
@@ -103,17 +103,27 @@ public class PontoServiceImpl implements PontoService {
     }
 
     @Override
-    public Map<YearMonth, Map<Projeto, Double>> listarPorMes(Integer usuarioId){
-        List<Ponto> pontos = pontoRepository.findByUsuarioIdOrderByDataDesc(usuarioId);
+    public List<PontosMensaisDTO> listarPorMes(Integer usuarioId){
+        List<Ponto> pontos = pontoRepository.findByUsuarioIdOrderByDataAsc(usuarioId);
         return pontos.stream()
             .filter(ponto -> ponto.getHorasFeitas() != null && ponto.isAtivo())
             .collect(Collectors.groupingBy(
-                ponto -> YearMonth.from(ponto.getData()),
-                Collectors.groupingBy(
+                ponto -> YearMonth.from(ponto.getData())
+            ))
+            .entrySet().stream()
+            .flatMap(entry -> entry.getValue().stream()
+                .collect(Collectors.groupingBy(
                     Ponto::getProjeto,
                     Collectors.summingDouble(Ponto::getHorasFeitas)
-                )
-            ));
+                ))
+                .entrySet().stream()
+                .map(projetoEntry -> new PontosMensaisDTO(
+                    projetoEntry.getKey().getNome(),
+                    entry.getKey(),
+                    projetoEntry.getValue()
+                ))
+            )
+            .collect(Collectors.toList());
     }
 
     @Override
