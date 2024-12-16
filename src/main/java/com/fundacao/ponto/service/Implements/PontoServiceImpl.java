@@ -103,14 +103,17 @@ public class PontoServiceImpl implements PontoService {
     }
 
     @Override
-    public Map<YearMonth, Double> listarPorMes(Integer usuarioId){
+    public Map<YearMonth, Map<Projeto, Double>> listarPorMes(Integer usuarioId){
         List<Ponto> pontos = pontoRepository.findByUsuarioIdOrderByDataDesc(usuarioId);
         return pontos.stream()
-                .filter(ponto -> ponto.getHorasFeitas() != null && ponto.isAtivo())
-                .collect(Collectors.groupingBy(
-                        ponto -> YearMonth.from(ponto.getData()), // Agrupa por mês e ano
-                        Collectors.summingDouble(Ponto::getHorasFeitas) // Soma o campo valor
-                ));
+            .filter(ponto -> ponto.getHorasFeitas() != null && ponto.isAtivo())
+            .collect(Collectors.groupingBy(
+                ponto -> YearMonth.from(ponto.getData()),
+                Collectors.groupingBy(
+                    Ponto::getProjeto,
+                    Collectors.summingDouble(Ponto::getHorasFeitas)
+                )
+            ));
     }
 
     @Override
