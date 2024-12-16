@@ -1,9 +1,12 @@
 package com.fundacao.ponto.service.Implements;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import com.fundacao.ponto.entity.Projeto;
+import com.fundacao.ponto.repository.ProjetoRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
@@ -20,14 +23,26 @@ public class UsuarioServiceImpl implements UsuarioService {
     private UsuarioRepository usuarioRepository;
 
     @Autowired
+    private ProjetoRepository projetoRepository;
+
+    @Autowired
     private ModelMapper modelMapper;
 
     @Override
     public UsuarioDTO cadastrar(UsuarioDTO usuarioDTO){
         Usuario usuario = modelMapper.map(usuarioDTO, Usuario.class);
+        List<Projeto> projetosGerenciados = new ArrayList<>();
+
+        for (Projeto projeto : usuario.getProjetos()) {
+            Projeto projetoGerenciado = projetoRepository.findById(projeto.getId())
+                    .orElseThrow(() -> new RuntimeException("Projeto não encontrado com ID: " + projeto.getId()));
+            projetosGerenciados.add(projetoGerenciado);
+        }
+        usuario.setProjetos(projetosGerenciados);
+
         usuarioRepository.save(usuario);
-        UsuarioDTO DTO = modelMapper.map(usuario, UsuarioDTO.class);
-        return DTO;
+
+        return modelMapper.map(usuario, UsuarioDTO.class);
     }
 
     @Override

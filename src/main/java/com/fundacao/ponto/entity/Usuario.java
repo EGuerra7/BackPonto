@@ -2,8 +2,9 @@ package com.fundacao.ponto.entity;
 
 import jakarta.persistence.*;
 
-
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "usuarios")
@@ -34,13 +35,23 @@ public class Usuario {
     @Column(name = "ativo")
     private boolean ativo;
 
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @JoinTable(
+            name = "usuario_projeto",
+            joinColumns = @JoinColumn(name = "usuario_id") ,
+            inverseJoinColumns =  @JoinColumn(name = "projeto_id")
+    )
+    private List<Projeto> projetos = new ArrayList<>();
+
     @Column(name = "permissao")
     private String permissao;
+
+
 
     public Usuario() {
     }
 
-    public Usuario(Integer id, String rfid, String nome, LocalTime cargaHoraria, String cargo, String email, String senha, boolean ativo, String permissao) {
+    public Usuario(Integer id, String rfid, String nome, LocalTime cargaHoraria, String cargo, String email, String senha, boolean ativo, String permissao, List<Projeto> projetos) {
         this.id = id;
         this.rfid = rfid;
         this.nome = nome;
@@ -50,6 +61,7 @@ public class Usuario {
         this.senha = senha;
         this.ativo = ativo;
         this.permissao = permissao;
+        this.projetos = projetos;
     }
 
     public Integer getId() {
@@ -122,5 +134,13 @@ public class Usuario {
 
     public void setPermissao(String permissao) {
         this.permissao = permissao;
+    }
+
+    public List<Projeto> getProjetos() {
+        return projetos;
+    }
+
+    public void setProjetos(List<Projeto> projetos) {
+        this.projetos = projetos;
     }
 }

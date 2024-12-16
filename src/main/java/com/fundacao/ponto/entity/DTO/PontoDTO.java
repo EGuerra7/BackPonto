@@ -13,17 +13,19 @@ public class PontoDTO {
     private Double horasFeitas;
     private String descricao;
     private boolean ativo;
+    private ProjetoDTO projeto;
 
-    public PontoDTO(LocalTime horaInicial, LocalDate data, String usuarioRfid, Integer usuarioId, String descricao, boolean ativo) {
+    public PontoDTO(LocalTime horaInicial, LocalDate data, String usuarioRfid, Integer usuarioId, String descricao, boolean ativo, ProjetoDTO projeto) {
         this.usuarioRfid = usuarioRfid;
         this.usuarioId = usuarioId;
         this.horaInicial = horaInicial;
         this.data = data;
         this.descricao = descricao;
         this.ativo = ativo;
+        this.projeto = projeto;
     }
 
-    public PontoDTO(String descricao, String usuarioRfid, Integer usuarioId, LocalDate data, LocalTime horaFinal, LocalTime horaInicial, boolean ativo) {
+    public PontoDTO(String descricao, String usuarioRfid, Integer usuarioId, LocalDate data, LocalTime horaFinal, LocalTime horaInicial, boolean ativo, ProjetoDTO projeto) {
         this.descricao = descricao;
         this.usuarioRfid = usuarioRfid;
         this.usuarioId = usuarioId;
@@ -31,6 +33,7 @@ public class PontoDTO {
         this.horaFinal = horaFinal;
         this.horaInicial = horaInicial;
         this.ativo = ativo;
+        this.projeto = projeto;
     }
 
     public PontoDTO() {
@@ -106,6 +109,14 @@ public class PontoDTO {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public ProjetoDTO getProjeto() {
+        return projeto;
+    }
+
+    public void setProjeto(ProjetoDTO projeto) {
+        this.projeto = projeto;
     }
 }
 

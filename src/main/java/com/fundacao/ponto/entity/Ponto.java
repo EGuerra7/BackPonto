@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.List;
 
 
 @Table(name = "bancodehoras")
@@ -38,15 +39,21 @@ public class Ponto {
     @Column(name = "ativo")
     private boolean ativo;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "projeto_id", nullable = false)
+    private Projeto projeto;
 
 
-    public Ponto(LocalTime horaInicial, LocalDate data, String usuarioRfid, Integer usuarioIdentificador ,String descricao, boolean ativo) {
+
+
+    public Ponto(LocalTime horaInicial, LocalDate data, String usuarioRfid, Integer usuarioIdentificador ,String descricao, boolean ativo, Projeto projeto) {
         this.usuarioRfid = usuarioRfid;
         this.usuarioId = usuarioIdentificador;
         this.horaInicial = horaInicial;
         this.data = data;
         this.descricao = descricao;
         this.ativo = ativo;
+        this.projeto = projeto;
     }
 
     public void calcularHoras(LocalTime horaInicial,LocalTime horaFinal){
@@ -57,14 +64,16 @@ public class Ponto {
         this.horasFeitas = minutes;
     }
 
-    public Ponto(String descricao, String usuarioRfid, Integer usuarioIdentificador, LocalDate data, LocalTime horaFinal, LocalTime horaInicial, boolean ativo) {
-        this.descricao = descricao;
-        this.usuarioRfid = usuarioRfid;
-        this.usuarioId = usuarioIdentificador;
-        this.data = data;
-        this.horaFinal = horaFinal;
+    public Ponto(LocalTime horaInicial, LocalTime horaFinal, LocalDate data, String usuarioRfid, Integer usuarioId, Double horasFeitas, String descricao, boolean ativo, Projeto projeto) {
         this.horaInicial = horaInicial;
+        this.horaFinal = horaFinal;
+        this.data = data;
+        this.usuarioRfid = usuarioRfid;
+        this.usuarioId = usuarioId;
+        this.horasFeitas = horasFeitas;
+        this.descricao = descricao;
         this.ativo = ativo;
+        this.projeto = projeto;
     }
 
     public Ponto() {
@@ -140,5 +149,13 @@ public class Ponto {
 
     public void setAtivo(boolean ativo) {
         this.ativo = ativo;
+    }
+
+    public Projeto getProjeto() {
+        return projeto;
+    }
+
+    public void setProjeto(Projeto projeto) {
+        this.projeto = projeto;
     }
 }

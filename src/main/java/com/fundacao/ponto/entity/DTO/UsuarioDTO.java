@@ -1,23 +1,37 @@
 package com.fundacao.ponto.entity.DTO;
 
+import com.fundacao.ponto.entity.Projeto;
+
 import java.time.LocalTime;
+import java.util.List;
 
 
 public class UsuarioDTO {
     private Integer id;
+
     private String rfid;
+
     private String nome;
+
     private LocalTime cargaHoraria;
+
     private String cargo;
+
     private String email;
+
     private String senha;
+
     private boolean ativo;
+
     private String permissao;
+
+    private List<ProjetoDTO> projetos;
+
 
     public UsuarioDTO() {
     }
 
-    public UsuarioDTO(Integer id, String rfid, String nome, LocalTime cargaHoraria, String cargo, String email, String senha, boolean ativo, String permissao) {
+    public UsuarioDTO(Integer id, String rfid, String nome, LocalTime cargaHoraria, String cargo, String email, String senha, boolean ativo, String permissao, List<ProjetoDTO> projetos) {
         this.id = id;
         this.rfid = rfid;
         this.nome = nome;
@@ -27,6 +41,7 @@ public class UsuarioDTO {
         this.senha = senha;
         this.ativo = ativo;
         this.permissao = permissao;
+        this.projetos = projetos;
     }
 
     public Integer getId() {
@@ -99,5 +114,13 @@ public class UsuarioDTO {
 
     public void setPermissao(String permissao) {
         this.permissao = permissao;
+    }
+
+    public List<ProjetoDTO> getProjetos() {
+        return projetos;
+    }
+
+    public void setProjetos(List<ProjetoDTO> projetos) {
+        this.projetos = projetos;
     }
 }

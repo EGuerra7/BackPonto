@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import com.fundacao.ponto.entity.DTO.ProjetoDTO;
+import com.fundacao.ponto.entity.Projeto;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
@@ -73,16 +75,19 @@ public class PontoServiceImpl implements PontoService {
                 Usuario usuario = usuarioRepository.findById(ponto.getUsuarioId())
                     .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
 
+                ProjetoDTO projeto = modelMapper.map(ponto.getProjeto(), ProjetoDTO.class);
+
                 return new PontoComUsuarioDTO(
-                    ponto.getId(),
-                    ponto.getHoraInicial(),
-                    ponto.getHoraFinal(),
-                    ponto.getData(),
-                    ponto.getHorasFeitas(),
-                    ponto.getDescricao(),
-                    ponto.isAtivo(),
-                    usuario.getId(),
-                    usuario.getNome()
+                        ponto.getId(),
+                        ponto.getHoraInicial(),
+                        ponto.getHoraFinal(),
+                        ponto.getData(),
+                        ponto.getHorasFeitas(),
+                        ponto.getDescricao(),
+                        ponto.isAtivo(),
+                        usuario.getId(),
+                        usuario.getNome(),
+                        projeto
                 );
             })
             .collect(Collectors.toList());
@@ -100,7 +105,6 @@ public class PontoServiceImpl implements PontoService {
     @Override
     public Map<YearMonth, Double> listarPorMes(Integer usuarioId){
         List<Ponto> pontos = pontoRepository.findByUsuarioIdOrderByDataDesc(usuarioId);
-
         return pontos.stream()
                 .filter(ponto -> ponto.getHorasFeitas() != null && ponto.isAtivo())
                 .collect(Collectors.groupingBy(

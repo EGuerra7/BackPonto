@@ -1,5 +1,7 @@
 package com.fundacao.ponto.entity.DTO;
 
+import com.fundacao.ponto.entity.Projeto;
+
 import java.time.LocalDate;
 import java.time.LocalTime;
 
@@ -16,10 +18,12 @@ public class PontoComUsuarioDTO {
     private Integer usuarioId;
     private String usuarioNome;
 
+    private ProjetoDTO projeto;
+
     public PontoComUsuarioDTO() {
     }
 
-    public PontoComUsuarioDTO(long pontoId, LocalTime horaInicial, LocalTime horaFinal, LocalDate data, Double horasFeitas, String descricao, boolean ativo, Integer usuarioId, String usuarioNome) {
+    public PontoComUsuarioDTO(long pontoId, LocalTime horaInicial, LocalTime horaFinal, LocalDate data, Double horasFeitas, String descricao, boolean ativo, Integer usuarioId, String usuarioNome, ProjetoDTO projeto) {
         this.pontoId = pontoId;
         this.horaInicial = horaInicial;
         this.horaFinal = horaFinal;
@@ -29,6 +33,7 @@ public class PontoComUsuarioDTO {
         this.ativo = ativo;
         this.usuarioId = usuarioId;
         this.usuarioNome = usuarioNome;
+        this.projeto = projeto;
     }
 
     public long getPontoId() {
@@ -101,5 +106,13 @@ public class PontoComUsuarioDTO {
 
     public void setUsuarioNome(String usuarioNome) {
         this.usuarioNome = usuarioNome;
+    }
+
+    public ProjetoDTO getProjeto() {
+        return projeto;
+    }
+
+    public void setProjeto(ProjetoDTO projeto) {
+        this.projeto = projeto;
     }
 }
